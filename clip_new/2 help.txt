@@ -1,0 +1,19 @@
+1 ps 查找进程 常用命令
+
+    ps aux|grep "process_name"
+2. 但是这样做，会导致出现一个 grep 进程 也就是说只用上面德命令，永远回得到至少一条数据 
+3. 所以还需要用下面的, 排除grep本身这个进程
+                grep  -v "grep"
+4.
+#!/bin/bash
+flag=`ps aux|grep "get_graph_data.py"|grep -v "grep"|wc -l`
+while [ 1 ]
+do
+    if [ $flag == 0
+    then
+        `python get_graph_data.py& >>running.log`
+    else
+         echo "get_graph-data.py is running">>running.log
+    fi
+     sleep 300 
+done

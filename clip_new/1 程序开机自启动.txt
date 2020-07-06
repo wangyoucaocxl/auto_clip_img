@@ -1,0 +1,8 @@
+1、搜索里面搜索startup
+2、把程序添加到里面
+
+
+有时候程序需要终端打开才能执行
+1、可把程序放到~/.bashrc里面
+2、在startup设置开机启动gnome-terminal
+位置在：usr/bin/gnome-terminal
